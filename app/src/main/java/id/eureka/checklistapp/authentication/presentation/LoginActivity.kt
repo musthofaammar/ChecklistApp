@@ -31,8 +31,8 @@ class LoginActivity : AppCompatActivity() {
     private fun setUI() {
         binding.btnLogin.setOnClickListener {
             viewModel.login(
+                binding.edUsername.text.toString(),
                 binding.edPassword.text.toString(),
-                binding.edUsername.text.toString()
             )
         }
 

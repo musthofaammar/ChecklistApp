@@ -15,7 +15,7 @@ import javax.inject.Inject
 class SplashActivity : AppCompatActivity() {
 
     @Inject
-    private lateinit var preferences: UserPreferences
+    lateinit var preferences: UserPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +27,8 @@ class SplashActivity : AppCompatActivity() {
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
             }
+
+            finish()
         }, 1000)
     }
 }

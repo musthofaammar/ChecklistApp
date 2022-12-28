@@ -4,6 +4,7 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import id.eureka.checklistapp.BuildConfig
 import id.eureka.checklistapp.core.api.ApiServices
@@ -46,7 +47,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideUserPreferences(context: Context): UserPreferences {
+    fun provideUserPreferences(@ApplicationContext context: Context): UserPreferences {
         return UserPreferencesImpl(context)
     }
 }

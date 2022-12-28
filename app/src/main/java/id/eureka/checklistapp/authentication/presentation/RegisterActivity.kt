@@ -24,6 +24,22 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setObserver()
+        setUI()
+    }
+
+    private fun setUI() {
+        binding.btnRegister.setOnClickListener {
+            viewModel.register(
+                binding.edEmail.text.toString(),
+                binding.edUsername.text.toString(),
+                binding.edPassword.text.toString()
+            )
+        }
+
+        binding.btnLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
     }
 
     private fun setObserver() {
